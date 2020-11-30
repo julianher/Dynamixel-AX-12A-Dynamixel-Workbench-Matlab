@@ -159,7 +159,7 @@ PROF: PEDRO CARDENAS
 
 AUTHOR: Julián Hernandez R\
 Actuator: Dynamixel AX12\
-MAIL: juahernandezro.edu.co\
+MAIL: juahernandezro@unal.edu.co\
 VERSION: 1\
 TESTED ON ROS Melodic (UBUNTU 18.04 LTS)\
 
