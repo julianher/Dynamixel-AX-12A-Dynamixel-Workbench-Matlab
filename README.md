@@ -26,7 +26,33 @@ Run this line to check your servo is conected
 ```bash
 $ rosrun dynamixel_workbench_controllers find_dynamixel /dev/ttyUSB0
 ```
-![find_dynamixel](https://ibb.co/qxRK9tG)
+
+output: (This may take a while)
+```bash
+[ INFO] [1606708375.133052618]: Succeed to init(9600)
+[ INFO] [1606708375.133082836]: Wait for scanning...
+[ INFO] [1606708396.914114755]: Find 0 Dynamixels
+[ INFO] [1606708396.914450658]: Succeed to init(57600)
+[ INFO] [1606708396.914462484]: Wait for scanning...
+[ INFO] [1606708414.947138819]: Find 0 Dynamixels
+[ INFO] [1606708414.947538320]: Succeed to init(115200)
+[ INFO] [1606708414.947551536]: Wait for scanning...
+[ INFO] [1606708432.605411183]: Find 0 Dynamixels
+[ INFO] [1606708432.605804044]: Succeed to init(1000000)
+[ INFO] [1606708432.605826514]: Wait for scanning...
+[ INFO] [1606708441.225827633]: Find 1 Dynamixels
+[ INFO] [1606708441.225851225]: id : 1, model name : AX-12A
+[ INFO] [1606708441.226307176]: Succeed to init(2000000)
+[ INFO] [1606708441.226316773]: Wait for scanning...
+[ INFO] [1606708458.530582724]: Find 0 Dynamixels
+[ INFO] [1606708458.530859334]: Succeed to init(3000000)
+[ INFO] [1606708458.530867632]: Wait for scanning...
+[ INFO] [1606708475.828060092]: Find 0 Dynamixels
+[ INFO] [1606708475.828423106]: Succeed to init(4000000)
+[ INFO] [1606708475.828432877]: Wait for scanning...
+[ INFO] [1606708493.122374825]: Find 0 Dynamixels
+
+```
 
 In this case we see I have a AX_12A with a 1000000 Bautrate
 
@@ -37,9 +63,34 @@ First move the one_servo.yaml in to  /catkin_ws/src/dynamixel-workbench/dynamixe
 open the /catkin_ws/src/dynamixel-workbench/dynamixel_workbench_controllers/launch/dynamixel_controllers.launch 
 * Set the Bautrate (In this case 1000000) 
 * Change the basic.yaml file to one_servo.yaml.
+```bash
+<launch>
+  <arg name="usb_port"                default="/dev/ttyUSB0"/>
+  <arg name="dxl_baud_rate"           default="1000000"/>
+  <arg name="namespace"               default="dynamixel_workbench"/>
 
-![launch_file](https://ibb.co/fkH3hj0)
+  <arg name="use_moveit"              default="false"/>
+  <arg name="use_joint_state"         default="true"/>
+  <arg name="use_cmd_vel"             default="false"/>
 
+  <param name="dynamixel_info"          value="$(find dynamixel_workbench_controllers)/config/one_servo.yaml"/>
+
+  <node name="$(arg namespace)" pkg="dynamixel_workbench_controllers" type="dynamixel_workbench_controllers"
+        required="true" output="screen" args="$(arg usb_port) $(arg dxl_baud_rate)">
+    <param name="use_moveit"              value="$(arg use_moveit)"/>
+    <param name="use_joint_states_topic"  value="$(arg use_joint_state)"/>
+    <param name="use_cmd_vel_topic"       value="$(arg use_cmd_vel)"/>
+    <rosparam>
+      publish_period: 0.010
+      dxl_read_period: 0.010
+      dxl_write_period: 0.010
+      mobile_robot_config:                <!--this values will be set when 'use_cmd_vel' is true-->
+        seperation_between_wheels: 0.160  <!--default value is set by reference of TB3-->
+        radius_of_wheel: 0.033            <!--default value is set by reference of TB3-->
+    </rosparam>
+  </node>
+</launch>
+```
 Launch the controllers 
 
 
