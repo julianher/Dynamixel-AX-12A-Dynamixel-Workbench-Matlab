@@ -155,9 +155,8 @@ Now open the AX_12 posicionAX12.mlx and run it. You can change the desire positi
 UNIVERSIDAD NACIONAL DE COLOMBIA\
 DEPARTAMENTO DE ING. MECANICA Y MECATRONICA \
 ROBOTICA 2020-2\
-PROF: PEDRO CARDENAS\
+PROF: PEDRO CARDENAS
 
-Publicación al tópico joint_trajectory ejemplo para posición.\
 AUTHOR: Julián Hernandez R\
 Actuator: Dynamixel AX12\
 MAIL: juahernandezro.edu.co\
