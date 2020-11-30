@@ -152,16 +152,16 @@ Now open the AX_12 posicionAX12.mlx and run it. You can change the desire positi
 
 * **Julian Hernandez** - [julianher](https://github.com/julianher) - Initial Work 
 
-UNIVERSIDAD NACIONAL DE COLOMBIA
-DEPARTAMENTO DE ING. MECANICA Y MECATRONICA
-ROBOTICA 2020-2
-PROF: PEDRO CARDENAS
+UNIVERSIDAD NACIONAL DE COLOMBIA\n
+DEPARTAMENTO DE ING. MECANICA Y MECATRONICA \n
+ROBOTICA 2020-2\n
+PROF: PEDRO CARDENAS\n
 
-Publicación al tópico joint_trajectory ejemplo para posición.
-AUTHOR: Julián Hernandez R
-Actuator: Dynamixel AX12
-MAIL: juahernandezro.edu.co
-VERSION: 1
-TESTED ON ROS Melodic (UBUNTU 18.04 LTS)
+Publicación al tópico joint_trajectory ejemplo para posición.\n
+AUTHOR: Julián Hernandez R\n
+Actuator: Dynamixel AX12\n
+MAIL: juahernandezro.edu.co\n
+VERSION: 1\n
+TESTED ON ROS Melodic (UBUNTU 18.04 LTS)\n
 
 
