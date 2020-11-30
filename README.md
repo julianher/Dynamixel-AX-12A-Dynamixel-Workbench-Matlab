@@ -146,7 +146,7 @@ output:
 
 Now open the AX_12 posicionAX12.mlx and run it. You can change the desire position but this time the position must be in radians and between (-2.6180,2.6180).
 
-![matlab_run](https://ibb.co/r7hnNKP)
+![matlab_run](https://ibb.co/r7hnNKP][img]https://i.ibb.co/r7hnNKP/Screenshot-from-2020-11-29-23-52-15.png)
 
 ## Authors 
 
